@@ -23,9 +23,18 @@ Press a hotkey from anywhere to search, pin, and reuse anything you've copied â€
 
 
 
-<img width="1032" height="656" alt="photo_6289490936957964975_y" src="https://github.com/user-attachments/assets/1aa9f5d8-9dc9-4e7c-96f2-5a504fc9687d" />
-<img width="1216" height="940" alt="photo_6289490936957964974_y" src="https://github.com/user-attachments/assets/0e36afbd-707c-4a15-950c-7ec0fd743db8" />
-
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/1aa9f5d8-9dc9-4e7c-96f2-5a504fc9687d" width="320" alt="Clipboard Manager popup - view 1">
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/0e36afbd-707c-4a15-950c-7ec0fd743db8" width="320" alt="Clipboard Manager popup - view 2">
+      </td>
+    </tr>
+  </table>
+</p>
 
 </div>
 
