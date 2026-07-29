@@ -14,6 +14,19 @@ Press a hotkey from anywhere to search, pin, and reuse anything you've copied â€
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-free%20to%20use-green)](#license)
 
+
+
+
+
+
+
+
+
+
+<img width="1032" height="656" alt="photo_6289490936957964975_y" src="https://github.com/user-attachments/assets/1aa9f5d8-9dc9-4e7c-96f2-5a504fc9687d" />
+<img width="1216" height="940" alt="photo_6289490936957964974_y" src="https://github.com/user-attachments/assets/0e36afbd-707c-4a15-950c-7ec0fd743db8" />
+
+
 </div>
 
 ---
