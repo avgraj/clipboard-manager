@@ -1,102 +1,119 @@
+[README_3.md](https://github.com/user-attachments/files/30491195/README_3.md)
+
+
+
+<div align="center">
+
 # Clipboard Manager
 
-A background clipboard history app for **Windows**.
+**A fast, keyboard-driven clipboard history app for Windows.**
 
-Press a hotkey from any app to search, pin, organize, and reuse anything you have copied. History is stored locally in SQLite, so it survives restarts (not only pinned items).
+Press a hotkey from anywhere to search, pin, and reuse anything you've copied — text or images — with history saved locally in SQLite.
+
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows)](https://github.com/avgraj/clipboard-manager)
+[![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-free%20to%20use-green)](#license)
+
+</div>
+
+---
 
 ## Features
 
-- Global hotkey (default: `Ctrl+B`) opens the popup from anywhere
-- Full clipboard history with timestamps, saved on disk
-- Live search
-- Pin items to keep them at the top
-- Folders (Work, Code, Links, or your own)
-- Image clipboard support with thumbnails
-- System tray icon (Show / Quit)
-- Title-bar **?** help tip (shows how to use the terminal helper)
-- Terminal helper: `clipboard.cmd` (`start`, `stop`, `open`, `close`, …)
-- Keyboard-first: arrows, Enter to copy, `Ctrl+P` pin, Delete, Esc, Tab for sidebar
+- **Global hotkey** (`Ctrl+B` by default) — open the popup from any app
+- **Full clipboard history** with timestamps, persisted to disk (survives restarts)
+- **Live search** across your history
+- **Pin** important items to keep them at the top
+- **Folders** — Work, Code, Links, or your own custom categories
+- **Image clipboard support** with thumbnails
+- **System tray icon** — quick Show / Quit
+- **Keyboard-first UX** — arrows, Enter to copy, `Ctrl+P` to pin, Delete, Esc, Tab for sidebar
+- **Terminal helper** (`clipboard.cmd`) — `start`, `stop`, `open`, `close`, and more
+- **In-app help** — click the `?` in the title bar anytime
+
+---
 
 ## Requirements
 
 - Windows 10 or 11
 - Python 3.10+
-- Packages in `requirements.txt`
+- Dependencies listed in `requirements.txt`
 
-## Project files
+---
 
-```
-clipboard_manager.py   # main app
-clipboard.cmd          # start / stop / open / close / …
-requirements.txt       # Python dependencies
-README.md
-.gitignore
-```
-
-## Install (step by step)
+## Installation
 
 ### 1. Install Python
 
-1. Download Python from https://www.python.org/downloads/
+1. Download Python from [python.org/downloads](https://www.python.org/downloads/)
 2. Run the installer
 3. Enable **Add python.exe to PATH**
 4. Finish the install
 
-Check in a **new** terminal:
-
-```bat
+Verify in a **new** terminal:
+```bash
 python --version
 ```
 
 ### 2. Get the project
 
-Clone:
-
-```bat
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+**Clone:**
+```bash
+git clone https://github.com/avgraj/clipboard-manager.git
+cd clipboard-manager
 ```
 
-Or download the ZIP from GitHub, extract it, and open that folder in a terminal.
+**Or** download the [ZIP](https://github.com/avgraj/clipboard-manager/archive/refs/heads/main.zip), extract it, and open that folder in a terminal.
 
 ### 3. Install dependencies
 
-```bat
+```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Run the app
 
-From the project folder:
-
-```bat
+```bash
 clipboard.cmd start
 ```
 
-Or:
-
-```bat
+Or directly:
+```bash
 pythonw clipboard_manager.py
 ```
 
-If something fails, use a console so you can see errors:
+> **Troubleshooting:** if something fails silently, run it in a console window so you can see errors:
+> ```bash
+> python clipboard_manager.py
+> ```
 
-```bat
-python clipboard_manager.py
+You should see a tray icon appear. Press `Ctrl+B` to open the popup.
+
+---
+
+## Project structure
+
+```
+clipboard-manager/
+├── clipboard_manager.py   # Main application
+├── clipboard.cmd          # start / stop / open / close / ...
+├── requirements.txt       # Python dependencies
+├── README.md
+└── .gitignore
 ```
 
-You should see a tray icon. Press `Ctrl+B` to open the window.
+---
 
 ## Daily use
 
 | Action | How |
-|--------|-----|
+|---|---|
 | Open popup | `Ctrl+B` or `clipboard.cmd open` |
 | Search | Type in the search box |
-| Copy an item | Select it + Enter, or click the copy button |
+| Copy an item | Select it + `Enter`, or click the copy button |
 | Pin / unpin | `Ctrl+P` or the pin control on the row |
 | Delete item | `Delete` |
-| Close popup | `Esc`, ✕, or `clipboard.cmd close` |
+| Close popup | `Esc`, the close button, or `clipboard.cmd close` |
 | Quit app | Tray → **Quit**, or `clipboard.cmd stop` |
 | Help tip | Click **?** in the title bar |
 
@@ -104,31 +121,23 @@ You should see a tray icon. Press `Ctrl+B` to open the window.
 
 Run from the project folder:
 
-```bat
-clipboard.cmd start
-clipboard.cmd stop
-clipboard.cmd open
-clipboard.cmd close
-clipboard.cmd toggle
-clipboard.cmd restart
-clipboard.cmd status
-clipboard.cmd help
+```bash
+clipboard.cmd start     # start in the background (tray)
+clipboard.cmd stop      # quit completely
+clipboard.cmd open      # show the popup (starts app if needed)
+clipboard.cmd close     # hide the popup (app stays in tray)
+clipboard.cmd toggle    # show or hide the popup
+clipboard.cmd restart   # stop, then start
+clipboard.cmd status    # check if running
+clipboard.cmd help      # list commands
 ```
 
-| Command | What it does |
-|---------|----------------|
-| `start` | Start in the background (tray) |
-| `stop` | Quit completely |
-| `open` | Show the popup (starts app if needed) |
-| `close` | Hide the popup (app stays in tray) |
-| `toggle` | Show or hide the popup |
-| `restart` | Stop, then start |
-| `status` | Running or not |
-| `help` | List commands |
+**Aliases:** `on` / `run` → `start`  ·  `off` / `quit` / `exit` → `stop`  ·  `show` → `open`  ·  `hide` → `close`
 
-Aliases: `on`/`run` → start · `off`/`quit`/`exit` → stop · `show` → open · `hide` → close
+<details>
+<summary><b>Optional: run <code>clipboard</code> from any terminal, not just the project folder</b></summary>
 
-#### Optional: run from any terminal
+<br>
 
 Create `%USERPROFILE%\bin\clipboard.cmd` with:
 
@@ -137,78 +146,82 @@ Create `%USERPROFILE%\bin\clipboard.cmd` with:
 "C:\full\path\to\this\project\clipboard.cmd" %*
 ```
 
-Add `%USERPROFILE%\bin` to your user PATH, open a new terminal, then:
+Add `%USERPROFILE%\bin` to your user PATH, open a new terminal, then run `clipboard start` / `clipboard open` from anywhere.
 
-```bat
-clipboard start
-clipboard open
+</details>
+
+---
+
+## Configuration
+
+### Change the hotkey
+
+Edit the top of `clipboard_manager.py`:
+
+```python
+HOTKEY = "ctrl+b"
 ```
 
-### In-app help (?)
+Other examples: `"ctrl+shift+v"`, `"alt+c"`, `"ctrl+alt+v"`.
 
-1. Open the popup (`Ctrl+B`)
-2. Click **?** in the title bar
-3. The search bar shows: `type clipboard in terminal`
+Then apply the change:
+```bash
+clipboard.cmd restart
+```
 
-Use the terminal helper (`clipboard.cmd`) for start / stop / open / close and the other commands listed above.
+### Run on Windows startup
 
-## Run on Windows startup
-
-1. Press `Win+R`
-2. Type `shell:startup` and press Enter
-3. Add a shortcut or a `.vbs` file:
+1. Press `Win+R`, type `shell:startup`, press Enter
+2. Add a shortcut or a `.vbs` file to that folder:
 
 **Shortcut**
+- **Target:** `"C:\path\to\pythonw.exe" "C:\path\to\this\project\clipboard_manager.py"`
+- **Start in:** `C:\path\to\this\project`
 
-- **Target:**  
-  `"C:\path\to\pythonw.exe" "C:\path\to\this\project\clipboard_manager.py"`
-- **Start in:**  
-  `C:\path\to\this\project`
-
-**Or `.vbs` (no console flash)**
-
+**Or a `.vbs` file (no console flash):**
 ```vbs
 Set sh = CreateObject("WScript.Shell")
 sh.CurrentDirectory = "C:\path\to\this\project"
 sh.Run """C:\path\to\pythonw.exe"" ""C:\path\to\this\project\clipboard_manager.py""", 0, False
 ```
 
-Replace paths with your real ones.
+Replace all paths with your actual project location.
 
-## Change the hotkey
-
-In `clipboard_manager.py` near the top:
-
-```python
-HOTKEY = "ctrl+b"
-```
-
-Examples: `"ctrl+shift+v"`, `"alt+c"`, `"ctrl+alt+v"`.
-
-Save, then:
-
-```bat
-clipboard.cmd restart
-```
+---
 
 ## Data location
 
 ```
 %USERPROFILE%\.clipboard_manager\
-  history.db
-  images\
-  command.txt    (used by clipboard.cmd open/close/stop)
-  app.pid
+├── history.db     # clipboard history (SQLite)
+├── images\        # saved image thumbnails
+├── command.txt    # used by clipboard.cmd open/close/stop
+└── app.pid
 ```
 
-All data stays on your PC. Nothing is uploaded.
+**Everything stays local.** Nothing is uploaded anywhere.
+
+---
 
 ## Notes
 
-- Windows only
-- Hotkey may not work while an elevated (Admin) window is focused
+- Windows only (no macOS/Linux support planned)
+- The hotkey may not register while an elevated (Admin) window is focused
 - Clipboard is checked about every 0.4s in the background
+
+---
 
 ## License
 
 Use and modify freely for personal or project use.
+
+---
+
+<div align="center">
+
+Made with a lot of `Ctrl+V`
+
+</div>
+
+
+
